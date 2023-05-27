@@ -37,7 +37,7 @@ function Sidebar() {
       </Toolbar>
       <Divider />
       <List>
-        {['Introduction', 'Projects', 'Contact'].map((text, index) => (
+        {['About Me', 'Projects', 'Contact'].map((text, index) => (
           <ListItem
             key={text}
             disablePadding

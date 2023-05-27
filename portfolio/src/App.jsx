@@ -1,7 +1,9 @@
-import './App.css'
+import './styles/App.css'
 import { ColorModeContext, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import Sidebar from './layouts/Sidebar';
+import Stack from '@mui/material/Stack';
+import AboutMe from './sections/AboutMe';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -10,16 +12,15 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="app">
           <main className="content">
-          <div>
-          <Sidebar/>
-          </div>
+          <Stack direction="row" spacing={20} alignItems="center">
+        <Sidebar />
+            <AboutMe />
+            </Stack>
           </main>
-        </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
 }
 
-export default App;
+export default App
