@@ -1,10 +1,16 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import { Container, Divider, Typography } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FeedIcon from '@mui/icons-material/Feed';
+import Stack from '@mui/material/Stack'
+import ExternalProfiles from '../components/ExternalProfiles';
 
 function Description() {
   return (
-   
+   <>
       <Box
       sx={{
         display: "inline-block",
@@ -17,19 +23,21 @@ function Description() {
           Software Engineer
         </Typography>
         <Typography 
-        variant="h5" 
+        variant="h4" 
         component="h5" 
-        fontWeight="400"
+        fontWeight="300"
         sx={{
-          width: "500px",
+          width: "auto",
+          maxWidth: {xl: 500, sm: 400, xs: 300},
           marginTop: "40px",
           marginRight: "0px"
         }}>
         My journey as a programmer started with backend development, where I built a strong sense of structure and good practices in the code I write. Later on, I applied those practices to frontend development as well. I am passionate about architecture and infrastructure and I strive to learn more everyday so I can build better software systems.
         </Typography>
-
+        <ExternalProfiles sx={{display: {sm: "none"}, marginTop: '20px'}}/>
+     
       </Box>
- 
+   </>
   )
 }
 

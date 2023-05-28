@@ -13,7 +13,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
           <main className="content">
-          <Stack direction="row" spacing={20} alignItems="center">
+          <Stack direction="row" alignItems="center">
         <Sidebar />
             <AboutMe />
             </Stack>

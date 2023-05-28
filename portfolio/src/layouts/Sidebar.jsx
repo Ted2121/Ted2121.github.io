@@ -20,6 +20,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import ExternalProfiles from '../components/ExternalProfiles';
 
 const drawerWidth = 250;
 
@@ -59,23 +60,7 @@ function Sidebar() {
       <Divider />
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "10px" }}>
 
-        <Stack direction="row" spacing={1} alignItems="center">
-          <a href="https://www.linkedin.com/in/teodor-andrei-1b91371ba/" target="_blank" rel="noopener noreferrer">
-            <IconButton aria-label="linkedin" size="large">
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-          </a>
-          <a href="https://github.com/Ted2121" target="_blank" rel="noopener noreferrer">
-            <IconButton aria-label="github" size="large">
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-          </a>
-          <a href="https://drive.google.com/file/d/1N6f3wBg4OMLF4_aL1n7IiLwDydOQ8ndH/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-            <IconButton aria-label="cv" size="large">
-              <FeedIcon fontSize="large" />
-            </IconButton>
-          </a>
-        </Stack>
+<ExternalProfiles/>
       </Box>
     </div>
   );

@@ -66,6 +66,10 @@ export const themeSettings = (mode) => {
                     background: {
                         default: colors.grey[800],
                     },
+                    grey: {
+                        dark: colors.grey[900],
+                        light: colors.grey[300]
+                    }
                 }
                 : {
                     // palette values for light mode
