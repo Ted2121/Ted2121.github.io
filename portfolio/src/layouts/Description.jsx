@@ -1,11 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-import { Container, Divider, Typography } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FeedIcon from '@mui/icons-material/Feed';
-import Stack from '@mui/material/Stack'
+import { Typography } from '@mui/material';
 import ExternalProfiles from '../components/ExternalProfiles';
 
 function Description() {

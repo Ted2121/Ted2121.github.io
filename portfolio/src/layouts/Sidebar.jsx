@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Grid from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FeedIcon from '@mui/icons-material/Feed';
+import { Link } from 'react-scroll';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
@@ -39,18 +36,24 @@ function Sidebar() {
       <Divider />
       <List>
         {['About Me', 'Projects', 'Contact'].map((text, index) => (
-          <ListItem
-            key={text}
-            disablePadding
-          >
-            <ListItemButton sx={{ height: "4rem" }}>
+          <ListItem key={text} disablePadding>
+            <ListItemButton sx={{ height: '4rem' }}>
               <ListItemIcon>
                 {index === 0 && <AccountBoxIcon /> ||
                   index === 1 && <DeveloperModeIcon /> ||
                   index === 2 && <AlternateEmailIcon />}
               </ListItemIcon>
               <ListItemText
-                primary={text}
+                primary={
+                  <Link
+                    to={text.toLowerCase().replace(' ', '-')}
+                    smooth
+                    duration={500}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    {text}
+                  </Link>
+                }
                 primaryTypographyProps={{ sx: { fontSize: '1.2rem' } }}
               />
             </ListItemButton>
@@ -60,7 +63,7 @@ function Sidebar() {
       <Divider />
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "10px" }}>
 
-<ExternalProfiles/>
+        <ExternalProfiles />
       </Box>
     </div>
   );

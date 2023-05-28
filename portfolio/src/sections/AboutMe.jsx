@@ -6,6 +6,7 @@ import Quotes from '../layouts/Quotes';
 function AboutMe() {
   return (
     <>
+    <div id="about-me">
   <div style={{ marginTop: '15vh', width: '100%' }}>
     <Grid
       container
@@ -21,6 +22,8 @@ function AboutMe() {
       </Grid>
     </Grid>
   </div>
+
+    </div>
 </>
   )
 }
