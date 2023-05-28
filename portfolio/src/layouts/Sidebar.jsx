@@ -37,7 +37,7 @@ function Sidebar() {
       <List>
         {['About Me', 'Projects', 'Contact'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton sx={{ height: '4rem' }}>
+            <ListItemButton sx={{ height: '4rem', zIndex: "9999" }}>
               <ListItemIcon>
                 {index === 0 && <AccountBoxIcon /> ||
                   index === 1 && <DeveloperModeIcon /> ||
