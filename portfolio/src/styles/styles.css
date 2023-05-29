@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-container .react-multi-carousel-track {
+  width: auto;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+/* file import */
+/* common */
+/* components *//*# sourceMappingURL=styles.css.map */

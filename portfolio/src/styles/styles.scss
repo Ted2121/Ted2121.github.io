@@ -1,0 +1,9 @@
+/* file import */
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* common */
+@use 'base';
+
+/* components */
+@use 'components/carousel';

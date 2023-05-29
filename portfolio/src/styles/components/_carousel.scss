@@ -1,0 +1,16 @@
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-container .react-multi-carousel-track {
+    width: auto;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}

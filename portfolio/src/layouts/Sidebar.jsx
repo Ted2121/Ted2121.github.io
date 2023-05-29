@@ -37,27 +37,25 @@ function Sidebar() {
       <List>
         {['About Me', 'Projects', 'Contact'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton sx={{ height: '4rem', zIndex: "9999" }}>
+          <Link
+            to={text.toLowerCase().replace(' ', '-')}
+            smooth
+            duration={500}
+            style={{ textDecoration: 'none', color: 'inherit', width: "100%" }}
+          >
+            <ListItemButton sx={{ height: '4rem', display: 'flex', alignItems: 'center' }}>
               <ListItemIcon>
                 {index === 0 && <AccountBoxIcon /> ||
                   index === 1 && <DeveloperModeIcon /> ||
                   index === 2 && <AlternateEmailIcon />}
               </ListItemIcon>
               <ListItemText
-                primary={
-                  <Link
-                    to={text.toLowerCase().replace(' ', '-')}
-                    smooth
-                    duration={500}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                  >
-                    {text}
-                  </Link>
-                }
+                primary={text}
                 primaryTypographyProps={{ sx: { fontSize: '1.2rem' } }}
               />
             </ListItemButton>
-          </ListItem>
+          </Link>
+        </ListItem>
         ))}
       </List>
       <Divider />
