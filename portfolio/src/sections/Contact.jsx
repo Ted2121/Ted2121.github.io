@@ -15,9 +15,9 @@ function Contact() {
     const email = "teodor.andrei174@gmail.com"
 
     return (
-        <Box sx={{ marginTop: '30px', textAlign: 'center', marginBottom: "50px"}} id="contact">
+        <Box sx={{ marginTop: '30px', textAlign: 'center', marginBottom: "50px" }} id="contact">
             <Divider sx={{ width: '70%', margin: '20px auto' }}>Contact</Divider>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: "center"}}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: "center" }}>
                 <IconButton
                     aria-label="contact"
                     size="large"
@@ -27,7 +27,7 @@ function Contact() {
                 >
                     <MailIcon fontSize="large" />
                 </IconButton>
-                <Typography sx={{margin: "0px 10px"}}>|</Typography>
+                <Typography sx={{ margin: "0px 10px" }}>|</Typography>
                 <Tooltip title="Copy to Clipboard" placement="right">
                     <IconButton
                         aria-label="Copy to Clipboard"

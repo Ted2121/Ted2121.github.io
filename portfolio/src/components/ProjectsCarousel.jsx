@@ -8,7 +8,7 @@ function ProjectsCarousel() {
     const responsive = {
         uhd: {
             breakpoint: { max: 3840, min: 2560 },
-            items: 8,
+            items: 6,
         },
         qhd: {
             breakpoint: { max: 2560, min: 1920 },
