@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProjectCard from './ProjectCard'
 
-function ProjectsCarousel() {
+function ProjectsCarousel({projects}) {
     const responsive = {
         uhd: {
             breakpoint: { max: 3840, min: 2560 },
@@ -46,12 +46,9 @@ function ProjectsCarousel() {
                 transitionDuration={500}
                 itemClass="carousel-item"
             >
-                <ProjectCard text="fcnbwerufhre" />
-                <ProjectCard text="gergregg" />
-                <ProjectCard text="gqrewgqreyur" />
-                <ProjectCard text="weqrewrewre" />
-                <ProjectCard text="h6yu6ertuywrywr" />
-                
+               {projects.map((project) => (
+              <ProjectCard key={project.id} text={project.description} />
+            ))}                
 
             </Carousel>
         </div>

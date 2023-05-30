@@ -43,7 +43,7 @@ export default function Quotes() {
   return (
     <Paper elevation={8} sx={{width: "fit-content", height: "fit-content", backgroundColor: "background.default"}}>
 
-    <Box sx={{ maxWidth: {xl: 500, sm: 400, xs: 300}, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: {lg: 600, sm: 400, xs: 300}, flexGrow: 1 }}>
     <Paper
         square
         elevation={0}

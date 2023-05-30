@@ -20,22 +20,15 @@ function ProjectCard({ text }) {
         <Card sx={{
             minWidth: { xs: xsWidth, lg: lgWidth, xl: xlWidth },
             minHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
+            maxWidth: { xs: xsWidth, lg: lgWidth, xl: xlWidth },
+            maxHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
         }}>
             <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    Word of the Day
-                </Typography>
+                
                 <Typography variant="h5" component="div">
                     {text}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    adjective
-                </Typography>
-                <Typography variant="body2">
-                    well meaning and kindly.
-                    <br />
-                    {'"a benevolent smile"'}
-                </Typography>
+                
             </CardContent>
             <CardActions>
                 <Button size="small">Learn More</Button>
