@@ -4,10 +4,14 @@ const projectsData = [
       title: 'Project 1',
       tldr: '',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      tags: [
-        "", ""
+      sections: [
+        "", "security", ""
       ],
-      imageUrl: 'path/to/image1.jpg',
+      // cardImageUrl: 'path/to/image1.jpg',
+      learningOutcomes: '',
+      demoUrl: '',
+      githubUrl: '',
+
     },
     {
       id: 2,

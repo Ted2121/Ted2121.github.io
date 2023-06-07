@@ -7,23 +7,21 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import debuggingTacticsImage from '../assets/DebuggingTactics.png';
 
 const steps = [
   {
-    quote: 'Select campaign settings',
-    image: ``,
+    image: `${debuggingTacticsImage}`,
+    alt: 'Debugging techniques'
   },
   {
     quote: 'Create an ad group',
     image:
-      'An ad group contains one or more ads which target a shared set of keywords.',
+      '',
   },
   {
     quote: 'Create an ad',
-    image: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    image: ``,
   },
 ];
 
@@ -58,8 +56,18 @@ export default function Quotes() {
         <Typography>Here are some quotes I feel inspired by</Typography>
       </Paper>
       <Box sx={{ 
-        height: {xl: 500, sm: 400, xs: 300}, width: {xl: 500, sm: 400, xs: 300}, p: 2 }}>
-        {steps[activeStep].description}
+        height: {xl: 500, sm: 400, xs: 300}, width: {xl: 500, sm: 400, xs: 300}, p: 0 }}>
+          
+          <picture>
+  {/* <source media="(min-width: 720px)" srcSet={smallPortfolioImage}/>
+  <source media="(max-width: 719px)" srcSet={smallPortfolioImage}/> */}
+  <img 
+  src={steps[activeStep].image} 
+  alt={steps[activeStep].alt}
+  style={{ maxWidth: '100%', maxHeight: '100%' }} />
+</picture>
+
+        {/* {steps[activeStep].image} */}
       </Box>
       <MobileStepper
         variant="dots"

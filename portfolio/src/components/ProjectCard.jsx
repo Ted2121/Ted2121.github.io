@@ -4,10 +4,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
 
 
 
-function ProjectCard({ text }) {
+function ProjectCard({ project }) {
     const aspectRatio = 0.8;
     const xsWidth = 275;
     const xsHeight = xsWidth / aspectRatio;
@@ -24,15 +26,20 @@ function ProjectCard({ text }) {
             maxHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
         }}>
             <CardContent>
-                
-                <Typography variant="h5" component="div">
-                    {text}
-                </Typography>
-                
+                <Toolbar variant="dense">
+
+                    <Typography variant="h3" component="h5">
+                        {project.title}
+                    </Typography>
+                </Toolbar>
+                <Box>
+                    <img src={project.cardImageUrl}></img>
+                </Box>
+
             </CardContent>
-            <CardActions>
+            {/* <CardActions>
                 <Button size="small">Learn More</Button>
-            </CardActions>
+            </CardActions> */}
         </Card >
     );
 }

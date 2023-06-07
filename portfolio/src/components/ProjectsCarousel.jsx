@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProjectCard from './ProjectCard'
 
-function ProjectsCarousel({projects}) {
+function ProjectsCarousel({ projects }) {
     const responsive = {
         uhd: {
             breakpoint: { max: 3840, min: 2560 },
@@ -33,25 +33,23 @@ function ProjectsCarousel({projects}) {
     };
 
     return (
-        <Box sx={{ justifyContent: "center", alignItems: "center", padding: "20px", marginTop: "30px"}}>
+        <Box sx={{ justifyContent: "center", alignItems: "center", padding: "20px", marginTop: "30px" }}>
             <Box sx={{ overflow: 'hidden' }}>
-        <div className='carousel-wrapper'>
-
-            <Carousel
-                containerClass="carousel-container"
-                responsive={responsive}
-                swipeable={true}
-                draggable={false}
-                showDots={false}
-                transitionDuration={500}
-                itemClass="carousel-item"
-            >
-               {projects.map((project) => (
-              <ProjectCard key={project.id} text={project.description} />
-            ))}                
-
-            </Carousel>
-        </div>
+                <div className='carousel-wrapper'>
+                    <Carousel
+                        containerClass="carousel-container"
+                        responsive={responsive}
+                        swipeable={true}
+                        draggable={false}
+                        showDots={false}
+                        transitionDuration={500}
+                        itemClass="carousel-item"
+                    >
+                        {projects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </Carousel>
+                </div>
             </Box>
         </Box>
     )
