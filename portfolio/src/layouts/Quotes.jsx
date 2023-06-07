@@ -7,17 +7,17 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import discoveringAssembly from '../assets/discoveringAssembly.png'
 import debuggingTacticsImage from '../assets/DebuggingTactics.png';
 
 const steps = [
   {
-    image: `${debuggingTacticsImage}`,
-    alt: 'Debugging techniques'
+    image: `${discoveringAssembly}`,
+    alt: 'Discovering Assembly'
   },
   {
-    quote: 'Create an ad group',
-    image:
-      '',
+    image: `${debuggingTacticsImage}`,
+    alt: 'Debugging techniques'
   },
   {
     quote: 'Create an ad',
