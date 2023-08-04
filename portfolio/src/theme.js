@@ -36,10 +36,12 @@ export const designTokens = () => ({
         800: "#624d47",
         900: "#312724"
     },
-    
     white: {
         100: "#ffffff",
         200: "#fcfcfc"
+    },
+    black: {
+        100: "#000000"
     }
 
 });
@@ -63,13 +65,17 @@ export const themeSettings = (mode) => {
                         main: colors.grey[500],
                         light: colors.grey[100],
                     },
-                    background: {
-                        default: colors.grey[800],
-                    },
                     grey: {
                         dark: colors.grey[900],
                         light: colors.grey[300]
-                    }
+                    },
+                    white: {
+                        main: colors.white[100],
+                        text: colors.white[200]
+                    },
+                    black: {
+                        main: colors.black[100]
+                    },
                 }
                 : {
                     // palette values for light mode
@@ -84,8 +90,16 @@ export const themeSettings = (mode) => {
                         main: colors.grey[500],
                         light: colors.grey[100],
                     },
-                    background: {
-                        default: colors.white[200],
+                    grey: {
+                        dark: colors.grey[900],
+                        light: colors.grey[300]
+                    },
+                    white: {
+                        main: colors.white[100],
+                        text: colors.white[200]
+                    },
+                    black: {
+                        main: colors.black[100]
                     },
                 }),
         },

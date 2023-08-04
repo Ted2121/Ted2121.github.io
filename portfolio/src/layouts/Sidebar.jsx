@@ -31,7 +31,9 @@ function Sidebar() {
   const drawer = (
     <div>
       <Toolbar>
-        <Typography variant="h3" component="h1">Teodor Andrei</Typography>
+        <Typography 
+        variant="h3" 
+        component="h1">Teodor Andrei</Typography>
       </Toolbar>
       <Divider />
       <List>

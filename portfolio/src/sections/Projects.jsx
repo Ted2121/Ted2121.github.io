@@ -1,20 +1,22 @@
 import { Box, Divider } from '@mui/material'
-import React from 'react'
-import ProjectsCarousel from '../components/ProjectsCarousel'
-import ProjectDescription from '../components/ProjectDescription'
+import React, { useState } from 'react'
+import ProjectsCarousel from '../layouts/ProjectsCarousel'
+import ProjectDescription from '../layouts/ProjectDescription'
 import projectsData from '../data/projectsData';
+import SectionDivider from '../components/SectionDivider';
 
 function Projects() {
   const projects = projectsData;
+  const [currentProject, setCurrentProject] = useState(projects[0]);
 
   return (
     <>
       <Box sx={{ display: "flex", marginTop: "30px", justifyContent: "center" }} id="projects">
-        <Divider sx={{ width: "70%" }}>Projects</Divider>
+        <SectionDivider text='Projects' />
       </Box>
       <Box>
-        <ProjectsCarousel projects={projects}/>
-        <ProjectDescription projects={projects}/>
+        <ProjectsCarousel projects={projects} setCurrentProject={setCurrentProject} />
+        <ProjectDescription currentProject={currentProject} />
 
       </Box>
     </>

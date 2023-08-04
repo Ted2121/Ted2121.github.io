@@ -2,9 +2,11 @@ import { Box } from '@mui/material';
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ProjectCard from './ProjectCard'
+import ProjectCard from '../components/ProjectCard'
 
-function ProjectsCarousel({ projects }) {
+function ProjectsCarousel({ projects, setCurrentProject }) {
+    
+    
     const responsive = {
         uhd: {
             breakpoint: { max: 3840, min: 2560 },
@@ -32,6 +34,11 @@ function ProjectsCarousel({ projects }) {
         }
     };
 
+    function handleImageClick(project) {
+        setCurrentProject(project);
+        console.log(project);
+    }
+
     return (
         <Box sx={{ justifyContent: "center", alignItems: "center", padding: "20px", marginTop: "30px" }}>
             <Box sx={{ overflow: 'hidden' }}>
@@ -46,7 +53,7 @@ function ProjectsCarousel({ projects }) {
                         itemClass="carousel-item"
                     >
                         {projects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
+                            <ProjectCard key={project.id} project={project} handleOnImageClick={handleImageClick} />
                         ))}
                     </Carousel>
                 </div>

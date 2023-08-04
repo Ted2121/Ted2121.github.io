@@ -6,7 +6,7 @@ import AboutMe from './sections/AboutMe';
 import { Box } from '@mui/system';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
-import ProjectsCarousel from './components/ProjectsCarousel';
+import ProjectsCarousel from './layouts/ProjectsCarousel';
 
 function App() {
   const [theme, colorMode] = useMode();
