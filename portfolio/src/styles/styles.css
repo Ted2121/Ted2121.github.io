@@ -22,6 +22,14 @@
   width: auto;
 }
 
+.project-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  row-gap: 20px;
+}
+
 /* file import */
 /* common */
 /* components *//*# sourceMappingURL=styles.css.map */

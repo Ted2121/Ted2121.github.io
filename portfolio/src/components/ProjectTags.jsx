@@ -1,33 +1,42 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-scroll';
 
-function ProjectTags({sectionTags}) {
+function ProjectTags({ sectionTags }) {
   return (
     <Box sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        columnGap: 2,
-        justifyContent:'center'
-      }}>
-        {sectionTags?.map((tag, index) => (
-          <Box
-            key={index}
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      columnGap: 1,
+      rowGap: 1,
+      justifyContent: 'center',
+    }}>
+      {sectionTags?.map((tag, index) => (
+        <Link
+          to={`${index}`}
+          key={index}
+          smooth
+          offset={-70}
+          duration={500}
+          style={{
+            textDecoration: 'none',
+            color: 'inherit',
+            width: "100%",
+            flexBasis: 'content',
+          }}
+        >
+          <Button
+            variant='outlined'
             sx={{
-              borderRadius: '8px',
+              borderRadius: '16px',
               border: '1px solid white',
-              padding: '5px 8px',
-              backgroundColor: 'grey.main',
-              maxWidth:'90%'
             }}>
-              <Typography sx={{
-                color:'white.main'
-              }}>
-  
             {tag}
-              </Typography>
-          </Box>
-        ))}
-      </Box>
+          </Button>
+        </Link>
+      ))}
+    </Box>
   )
 }
 

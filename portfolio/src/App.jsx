@@ -6,10 +6,12 @@ import AboutMe from './sections/AboutMe';
 import { Box } from '@mui/system';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
-import ProjectsCarousel from './layouts/ProjectsCarousel';
+import BackToButton from './components/BackToButton';
 
 function App() {
   const [theme, colorMode] = useMode();
+
+  const borderColor = theme.palette.mode === 'light' ? 'black' : 'white';
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -34,7 +36,20 @@ function App() {
             <AboutMe />
             <Projects />
             <Contact />
-            {/* <ProjectsCarousel /> */}
+            {console.log(borderColor)}
+            <Box sx={{
+              display:'flex',
+              width:'100%',
+              justifyContent:'center',
+              mb:'20px'
+            }}>
+              <Box sx={{
+                display: 'inline-block',
+                border: `1px solid ${borderColor}`,
+              }}>
+                <BackToButton index='about-me' />
+              </Box>
+            </Box>
           </Box>
         </Box>
       </ThemeProvider>

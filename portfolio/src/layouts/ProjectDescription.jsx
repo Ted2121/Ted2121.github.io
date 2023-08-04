@@ -1,56 +1,48 @@
 import { Box, Divider, Paper, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import SectionDivider from '../components/SectionDivider'
 import ProjectSectionText from '../components/ProjectSectionText';
+import ProjectTags from '../components/ProjectTags';
+import ProjectSection from './ProjectSection';
+import { Description } from '@mui/icons-material';
+import BackToButton from '../components/BackToButton';
 
 function ProjectDescription({ currentProject }) {
-  const sectionTags = currentProject.sections.map((section) => section.tag);
-
-  const tags = (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      columnGap: 2,
-      justifyContent:'center'
-    }}>
-      {sectionTags.map((tag, index) => (
-        <Box
-          key={index}
-          sx={{
-            borderRadius: '8px',
-            border: '1px solid white',
-            padding: '5px 8px',
-            backgroundColor: 'grey.main',
-          }}>
-            <Typography sx={{
-              color:'white.main'
-            }}>
-
-          {tag}
-            </Typography>
-        </Box>
-      ))}
-    </Box>
-  );
+  const sectionTags = currentProject.sections?.map((section) => section.tag);
+  // const [indexInView, setIndexInView] = useState(0);
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "30px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "30px"
+      }}>
       <Paper sx={{
-        width: { xs: 275, sm: "88.4%" },
+        width: { xs: "88%" },
         display: 'flex',
         flexDirection: 'column',
         rowGap: 3,
         p: '10px',
-        alignItems:'center'
+        alignItems: 'center'
       }}>
-        <Typography variant='h2' sx={{
-          textAlign: 'center'
-        }}>
+        <Typography
+          id='title'
+          variant='h2' sx={{
+            textAlign: 'center'
+          }}>
           {currentProject?.title}
         </Typography>
-        {tags}
-        <SectionDivider text='Description' />
-        <ProjectSectionText text={currentProject?.description}/>
+        <ProjectTags sectionTags={sectionTags} />
+
+        {currentProject.sections?.map((section, index) => (
+          <ProjectSection
+            key={index}
+            id={index}
+            dividerText={section.title}
+            contentText={section.text} />))}
+        <BackToButton index='title' />
       </Paper>
     </Box>
   )

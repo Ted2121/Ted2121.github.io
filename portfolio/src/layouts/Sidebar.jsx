@@ -31,33 +31,33 @@ function Sidebar() {
   const drawer = (
     <div>
       <Toolbar>
-        <Typography 
-        variant="h3" 
-        component="h1">Teodor Andrei</Typography>
+        <Typography
+          variant="h3"
+          component="h1">Teodor Andrei</Typography>
       </Toolbar>
       <Divider />
       <List>
         {['About Me', 'Projects', 'Contact'].map((text, index) => (
           <ListItem key={text} disablePadding>
-          <Link
-            to={text.toLowerCase().replace(' ', '-')}
-            smooth
-            duration={500}
-            style={{ textDecoration: 'none', color: 'inherit', width: "100%" }}
-          >
-            <ListItemButton sx={{ height: '4rem', display: 'flex', alignItems: 'center' }}>
-              <ListItemIcon>
-                {index === 0 && <AccountBoxIcon /> ||
-                  index === 1 && <DeveloperModeIcon /> ||
-                  index === 2 && <AlternateEmailIcon />}
-              </ListItemIcon>
-              <ListItemText
-                primary={text}
-                primaryTypographyProps={{ sx: { fontSize: '1.2rem' } }}
-              />
-            </ListItemButton>
-          </Link>
-        </ListItem>
+            <Link
+              to={text.toLowerCase().replace(' ', '-')}
+              smooth
+              duration={500}
+              style={{ textDecoration: 'none', color: 'inherit', width: "100%" }}
+            >
+              <ListItemButton sx={{ height: '4rem', display: 'flex', alignItems: 'center' }}>
+                <ListItemIcon>
+                  {index === 0 && <AccountBoxIcon /> ||
+                    index === 1 && <DeveloperModeIcon /> ||
+                    index === 2 && <AlternateEmailIcon />}
+                </ListItemIcon>
+                <ListItemText
+                  primary={text}
+                  primaryTypographyProps={{ sx: { fontSize: '1.2rem' } }}
+                />
+              </ListItemButton>
+            </Link>
+          </ListItem>
         ))}
       </List>
       <Divider />
