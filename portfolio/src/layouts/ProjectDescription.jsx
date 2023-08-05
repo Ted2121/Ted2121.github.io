@@ -9,7 +9,6 @@ import BackToButton from '../components/BackToButton';
 
 function ProjectDescription({ currentProject }) {
   const sectionTags = currentProject.sections?.map((section) => section.tag);
-  // const [indexInView, setIndexInView] = useState(0);
 
   return (
     <Box
@@ -25,7 +24,8 @@ function ProjectDescription({ currentProject }) {
         flexDirection: 'column',
         rowGap: 3,
         p: '10px',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'grey.main'
       }}>
         <Typography
           id='title'

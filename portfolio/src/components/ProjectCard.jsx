@@ -30,7 +30,8 @@ function ProjectCard({ project, handleOnImageClick }) {
             minHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
             maxWidth: { xs: xsWidth, lg: lgWidth, xl: xlWidth },
             maxHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
-            overflow:'hidden'
+            overflow: 'hidden',
+            backgroundColor:'grey.main'
         }}>
             <CardContent>
                 <Toolbar variant="dense">
@@ -40,10 +41,10 @@ function ProjectCard({ project, handleOnImageClick }) {
                         {project?.title}
                     </Typography>
                     <Box sx={{
-                        fontSize:'1rem',
-                        border:'1px solid black',
-                        backgroundColor:'white.main',
-                        color:'black.main'
+                        fontSize: '1rem',
+                        border: '1px solid black',
+                        backgroundColor: 'white.main',
+                        color: 'black.main'
                     }}>
 
                     </Box>

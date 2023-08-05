@@ -29,7 +29,7 @@ function Sidebar() {
   };
 
   const drawer = (
-    <div>
+    <div onClick={handleDrawerToggle}>
       <Toolbar>
         <Typography
           variant="h3"
@@ -44,6 +44,7 @@ function Sidebar() {
               smooth
               duration={500}
               style={{ textDecoration: 'none', color: 'inherit', width: "100%" }}
+              onClick={handleDrawerToggle}
             >
               <ListItemButton sx={{ height: '4rem', display: 'flex', alignItems: 'center' }}>
                 <ListItemIcon>
@@ -62,7 +63,6 @@ function Sidebar() {
       </List>
       <Divider />
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: "10px" }}>
-
         <ExternalProfiles />
       </Box>
     </div>

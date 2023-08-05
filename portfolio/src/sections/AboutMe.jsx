@@ -7,7 +7,7 @@ function AboutMe() {
   return (
     <>
       <div id="about-me">
-        <div style={{ marginTop: '15vh', width: '100%' }}>
+        <div style={{ marginTop: '10vh', width: '100%' }}>
           <Grid
             container
             spacing={4}

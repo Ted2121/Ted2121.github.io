@@ -9,26 +9,38 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import discoveringAssembly from '../assets/discoveringAssembly.png'
 import debuggingTacticsImage from '../assets/DebuggingTactics.png';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { IconButton } from '@mui/material';
+import { useState } from 'react';
+import { useMediaQuery } from '@mui/material';
 
-const steps = [
-  {
-    image: `${discoveringAssembly}`,
-    alt: 'Discovering Assembly'
-  },
-  {
-    image: `${debuggingTacticsImage}`,
-    alt: 'Debugging techniques'
-  },
-  {
-    quote: 'Create an ad',
-    image: ``,
-  },
-];
 
 export default function ProfileQuotes() {
+  const steps = [
+    {
+      image: `${discoveringAssembly}`,
+      alt: 'Discovering Assembly'
+    },
+    {
+      image: `${debuggingTacticsImage}`,
+      alt: 'Debugging techniques'
+    },
+    {
+      quote: 'Create an ad',
+      image: ``,
+    },
+  ];
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+  const [isHidden, setIsHidden] = useState(true);
   const maxSteps = steps.length;
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  function handleShowQuotesClick() {
+    setIsHidden((prevState) => !prevState);
+  }
+
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -39,68 +51,88 @@ export default function ProfileQuotes() {
   };
 
   return (
-    <Paper elevation={8} sx={{ width: "fit-content", height: "fit-content", backgroundColor: "white.main" }}>
-
-      <Box sx={{ maxWidth: { lg: 600, sm: 400, xs: 300 }, flexGrow: 1 }}>
-        <Paper
-          square
-          elevation={0}
+    <Paper elevation={8} sx={{ width: 'fit-content', height: 'fit-content', backgroundColor: 'white.main' }}>
+    <Box sx={{ maxWidth: { xl: 500, sm: 400, xs: 300 }, flexGrow: 1 }}>
+      <Paper
+        square
+        elevation={0}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          height: 50,
+          pl: 2,
+          bgcolor: 'grey.main',
+        }}
+      >
+        <Box
+          onClick={isMobile ? handleShowQuotesClick : undefined}
           sx={{
             display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            height: 50,
-            pl: 2,
-            bgcolor: 'grey.dark',
+            width: { xs: 300, sm: 400, lg: 500 },
           }}
         >
           <Typography>
             Here are some quotes I feel inspired by
           </Typography>
-        </Paper>
-        <Box sx={{
-          height: { xl: 500, sm: 400, xs: 300 }, width: { xl: 500, sm: 400, xs: 300 }, p: 0
-        }}>
-
-          <picture>
-            <img
-              src={steps[activeStep].image}
-              alt={steps[activeStep].alt}
-              style={{ maxWidth: '100%', maxHeight: '100%' }} />
-          </picture>
-
-          {/* {steps[activeStep].image} */}
+          {isMobile && ( 
+            <IconButton>
+              {isHidden ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+            </IconButton>
+          )}
         </Box>
-        <MobileStepper
-          variant="dots"
-          steps={maxSteps}
-          position="static"
-          activeStep={activeStep}
-          sx={{ bgcolor: 'grey.dark' }}
-          nextButton={
-            <Button
-              size="large"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-            >
-
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowLeft style={{ fontSize: '3rem' }} />
-              ) : (
-                <KeyboardArrowRight style={{ fontSize: '3rem' }} />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowRight style={{ fontSize: '3rem' }} />
-              ) : (
-                <KeyboardArrowLeft style={{ fontSize: '3rem' }} />
-              )}
-
-            </Button>
-          }
-        />
+      </Paper>
+      {(!isMobile || !isHidden) && ( // Render the content only on mobile and when not hidden
+          <>
+            <Box sx={{
+              height: { xl: 500, sm: 400, xs: 300 },
+              width: { xl: 500, sm: 400, xs: 300 },
+              p: 0
+            }}>
+              <picture>
+                <img
+                  src={steps[activeStep].image}
+                  alt={steps[activeStep].alt}
+                  style={{ maxWidth: '100%', maxHeight: '100%' }}
+                />
+              </picture>
+            </Box>
+            <MobileStepper
+              variant="dots"
+              steps={maxSteps}
+              position="static"
+              activeStep={activeStep}
+              sx={{ bgcolor: 'grey.dark' }}
+              nextButton={
+                <Button
+                  size="large"
+                  onClick={handleNext}
+                  disabled={activeStep === maxSteps - 1}
+                >
+                  {theme.direction === 'rtl' ? (
+                    <KeyboardArrowLeft style={{ fontSize: '3rem' }} />
+                  ) : (
+                    <KeyboardArrowRight style={{ fontSize: '3rem' }} />
+                  )}
+                </Button>
+              }
+              backButton={
+                <Button
+                  size="small"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}>
+                  {theme.direction === 'rtl' ? (
+                    <KeyboardArrowRight style={{ fontSize: '3rem' }} />
+                  ) : (
+                    <KeyboardArrowLeft style={{ fontSize: '3rem' }} />
+                  )}
+                </Button>
+              }
+            />
+          </>
+        )}
       </Box>
     </Paper>
   );

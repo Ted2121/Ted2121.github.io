@@ -11,7 +11,7 @@ export const designTokens = () => ({
         500: "#666666",
         600: "#525252",
         700: "#3d3d3d",
-        800: "#292929",
+        800: "#1c1c1c",
         900: "#141414",
     },
     primary: {
@@ -66,8 +66,9 @@ export const themeSettings = (mode) => {
                         light: colors.grey[100],
                     },
                     grey: {
+                        light: colors.grey[300],
+                        main: colors.grey[800],
                         dark: colors.grey[900],
-                        light: colors.grey[300]
                     },
                     white: {
                         main: colors.white[100],
@@ -91,8 +92,9 @@ export const themeSettings = (mode) => {
                         light: colors.grey[100],
                     },
                     grey: {
+                        light: colors.grey[300],
+                        main: colors.grey[800],
                         dark: colors.grey[900],
-                        light: colors.grey[300]
                     },
                     white: {
                         main: colors.white[100],
