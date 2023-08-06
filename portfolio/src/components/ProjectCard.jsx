@@ -15,10 +15,12 @@ import { IconButton } from '@mui/material';
 function ProjectCard({ project, handleOnImageClick }) {
     const xsWidth = 275;
     const xsHeight = xsWidth / 0.75;
-    const lgWidth = 300;
-    const lgHeight = xsWidth / 0.7;
+    const smWidth = 300;
+    const smHeight = smWidth / 0.75;
+    const lgWidth = 325;
+    const lgHeight = lgWidth / 0.75;
     const xlWidth = 375;
-    const xlHeight = xlWidth / 0.81;
+    const xlHeight = xlWidth / 0.80;
 
     function onImageClick() {
         handleOnImageClick(project);
@@ -26,17 +28,18 @@ function ProjectCard({ project, handleOnImageClick }) {
 
     return (
         <Card sx={{
-            minWidth: { xs: xsWidth, lg: lgWidth, xl: xlWidth },
-            minHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
-            maxWidth: { xs: xsWidth, lg: lgWidth, xl: xlWidth },
-            maxHeight: { xs: xsHeight, lg: lgHeight, xl: xlHeight },
+            minWidth: { xs: xsWidth, sm: smWidth, lg: lgWidth, xl: xlWidth },
+            minHeight: { xs: xsHeight, sm: smHeight, lg: lgHeight, xl: xlHeight },
+            maxWidth: { xs: xsWidth, sm: smWidth, lg: lgWidth, xl: xlWidth },
+            maxHeight: { xs: xsHeight, sm: smHeight, lg: lgHeight, xl: xlHeight },
             overflow: 'hidden',
-            backgroundColor:'grey.main'
+            backgroundColor: 'grey.main'
         }}>
             <CardContent>
                 <Toolbar variant="dense">
-
-                    <Typography variant="h3" component="h5" sx={{
+                    <Typography sx={{
+                        textAlign: 'center',
+                        fontSize: { xs: '1.3rem', md: '1.4rem' }
                     }}>
                         {project?.title}
                     </Typography>
@@ -46,15 +49,19 @@ function ProjectCard({ project, handleOnImageClick }) {
                         backgroundColor: 'white.main',
                         color: 'black.main'
                     }}>
-
                     </Box>
                 </Toolbar>
-                <Box>
+                <Box sx={{
+                    display:'flex',
+                    justifyContent:'center',
+                    width:'100%',
+                    height:'100%'
+                }}>
                     <picture onClick={onImageClick}>
                         <img
                             src={project?.cardImageUrl}
                             alt={project?.cardImageAlt}
-                            style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                            style={{ maxWidth: '100%', maxHeight: '100%', width:'100%', height:'100%' }} />
                     </picture>
                 </Box>
                 <Box sx={{

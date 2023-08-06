@@ -1,12 +1,10 @@
-import { Box } from '@mui/material';
+import { Box, Typography, useAutocomplete } from '@mui/material';
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ProjectCard from '../components/ProjectCard'
 
 function ProjectsCarousel({ projects, setCurrentProject }) {
-    
-    
     const responsive = {
         uhd: {
             breakpoint: { max: 3840, min: 2560 },
@@ -34,13 +32,17 @@ function ProjectsCarousel({ projects, setCurrentProject }) {
         }
     };
 
+    function handleBeforeChange() {
+        setCurrentProject(undefined);
+    }
+
     function handleImageClick(project) {
         setCurrentProject(project);
         console.log(project);
     }
 
     return (
-        <Box sx={{ justifyContent: "center", alignItems: "center", padding: "20px", marginTop: "30px" }}>
+        <Box sx={{ justifyContent: "center", alignItems: "center", padding: "20px", marginTop: "20px" }}>
             <Box sx={{ overflow: 'hidden' }}>
                 <div className='carousel-wrapper'>
                     <Carousel
@@ -51,13 +53,19 @@ function ProjectsCarousel({ projects, setCurrentProject }) {
                         showDots={false}
                         transitionDuration={500}
                         itemClass="carousel-item"
-                    >
+                        beforeChange={handleBeforeChange}>
                         {projects.map((project) => (
                             <ProjectCard key={project.id} project={project} handleOnImageClick={handleImageClick} />
                         ))}
                     </Carousel>
                 </div>
             </Box>
+            <Typography sx={{
+                mt: '20px',
+                fontSize: '0.8rem'
+            }}>
+                * Click on project image for more details
+            </Typography>
         </Box>
     )
 }
