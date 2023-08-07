@@ -33,7 +33,7 @@ function ProjectsCarousel({ projects, setCurrentProject }) {
     };
 
     function handleBeforeChange() {
-        setCurrentProject(undefined);
+        setCurrentProject(null);
     }
 
     function handleImageClick(project) {

@@ -7,7 +7,7 @@ import SectionDivider from '../components/SectionDivider';
 
 function Projects() {
   const projects = projectsData;
-  const [currentProject, setCurrentProject] = useState(projects[0]);
+  const [currentProject, setCurrentProject] = useState(null);
 
   return (
     <>
@@ -23,4 +23,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default Projects;

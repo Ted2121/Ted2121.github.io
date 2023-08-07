@@ -39,7 +39,7 @@ function ProjectCard({ project, handleOnImageClick }) {
                 <Toolbar variant="dense">
                     <Typography sx={{
                         textAlign: 'center',
-                        fontSize: { xs: '1.3rem', md: '1.4rem' }
+                        fontSize: { xs: '1.3rem', md: '1.4rem', lg:'1.5rem', xl:'1.6rem' }
                     }}>
                         {project?.title}
                     </Typography>

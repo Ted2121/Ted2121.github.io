@@ -43,6 +43,7 @@ function ProjectDescription({ currentProject }) {
                 id={index}
                 dividerText={section.title}
                 contentText={section.text}
+                images={section.images}
               />
             ))}
             <BackToButton index='title' />
